@@ -1,47 +1,296 @@
-/* Apply styles to the whole page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
+/* =========================
+   Global Styles
+========================= */
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================
+   Header
+========================= */
+
+header {
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
     padding: 20px;
 }
 
-/* Main heading */
-h1 {
-    color: #2c3e50;
-    font-size: 36px;
+header h1 {
+    font-size: 40px;
 }
 
-/* Paragraph */
-p {
-    color: #555;
+header p {
     font-size: 18px;
 }
 
-/* Link */
-a {
-    color: #007BFF;
+/* =========================
+   Navigation Bar
+========================= */
+
+nav {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
     text-decoration: none;
+    margin: 20px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* =========================
+   Main Section
+========================= */
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* =========================
+   Cards
+========================= */
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+    background-color: #198754;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #146c43;
+    transform: scale(1.05);
+}
+
+/* =========================
+   Images
+========================= */
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.image-box {
+    width: 400px;
+    margin: auto;
+}
+
+/* =========================
+   Tables
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+table, th, td {
+    border: 1px solid gray;
+}
+
+th {
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* =========================
+   Forms
+========================= */
+
+form {
+    width: 400px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: blue;
+    outline: none;
+}
+
+label {
     font-weight: bold;
 }
 
-a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+/* =========================
+   Lists
+========================= */
+
+ul {
+    list-style-type: square;
+    margin-left: 40px;
 }
 
-/* Button */
-button {
-    background-color: #28a745;
+ol {
+    margin-left: 40px;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    background-color: #222;
     color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
 }
 
-button:hover {
-    background-color: #218838;
+/* =========================
+   Flexbox
+========================= */
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex-item {
+    background: white;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* =========================
+   Grid
+========================= */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background: #0d6efd;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* =========================
+   Animation
+========================= */
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: red;
+    animation: move 3s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(200px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width:768px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    form {
+        width: 100%;
+    }
 }
